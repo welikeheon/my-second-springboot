@@ -7,8 +7,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 // 테스트를 진행할 때 JUnit에 내장된 실행자가 아닌 SpringRunner라는 스프링 실행자를 사용함, 스프링부트 테스트와 JUnit간의 연결자 역할..
@@ -31,5 +33,21 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 // hello는 뜨니?
                 .andExpect(content().string(hello));
+    }
+
+    @Test
+    public void helloDto가_리턴된다() throws Exception {
+        String name = "hello";
+        int amount = 1000;
+
+        mvc.perform(
+                get("/hello/dto")
+                    .param("name", name) // API를 테스트할 때 사용될 요청 파라미터를 설정, String만 허용
+                    .param("amount", String.valueOf(amount)) // 요런식으로.. String으로 변경해야 함(날짜 포함)
+                )
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.amount", is(amount))
+        );
     }
 }
