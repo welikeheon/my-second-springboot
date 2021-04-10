@@ -1,11 +1,13 @@
 package com.c11.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * SpringBootApplication 어노테이션으로 인해 스프링부트의 자동설정, 스프링 Bean 읽기, 생성 등 모두 자동으로 설정됨.
  * 여기 위치부터 설정을 읽어나가기 시작하기 때문에 항상 프로젝트의 최상단에 위치해야 함.
  */
+@EnableJpaAuditing // 시간 처리할 수 있도록 JpaAuditing 을 활성화 시킴..
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {

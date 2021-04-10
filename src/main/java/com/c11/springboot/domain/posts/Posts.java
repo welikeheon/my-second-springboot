@@ -1,5 +1,6 @@
 package com.c11.springboot.domain.posts;
 
+import com.c11.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Getter // 롬복의 어노테이션
 @NoArgsConstructor // 롬복의 어노테이션
 @Entity // JPA의 어노테이션, 테이블과 링크될 클래스임을 나타냄. CamelCase를 따름 (e.g, SalesManager --> sales_manager) 로 될 것임.
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id
     /**
      * @GeneratedValue 는 PK의 생성규칙을 나타냄.

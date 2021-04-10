@@ -13,11 +13,12 @@ My First Springboot Project is still in my repository, At the moment, project wi
 - [X] Setting up IntelliJ (4/8)
 - [X] Design a First Controller (4/8)
 - [X] Apply Lombok & Using Lombok to Convert HelloController (4/8)
-- [ ] Lookup JPA (~4/9)
-- [ ] Apply JPA in Project (~4/9)
-- [ ] Design JPA Test code (~4/9)
-- [ ] Design CRUD Thing (~4/10)
-- [ ] Adapt JPA Auditing (~4/10)
+- [X] Lookup JPA (~4/9)
+- [X] Apply JPA in Project (~4/9)
+- [X] Design JPA Test code (~4/9)
+- [X] Design CRUD Thing (~4/10)
+- [X] Adapt JPA Auditing (~4/10)
+  - [ ] Review the __Builder Pattern(4/11)__
 - [ ] Template Engine (Mustache)
 - [ ] Generate Default Page & CRUD thing
 - [ ] Understanding Spring Security & OAuth2 Client
